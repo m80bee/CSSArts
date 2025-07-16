@@ -1,4 +1,4 @@
-# CSS Art Gallery
+# [CSS Art Gallery](https://m80bee.github.io/CSSArts/index.html)
 
 Welcome to the CSS Art Gallery, a creative exploration of what's possible with just HTML and CSS. This project is a collection of famous artworks and abstract pieces, recreated as dynamic, interactive web-based art without a single line of JavaScript.
 
@@ -19,6 +19,8 @@ The goal of this gallery is to push the boundaries of CSS and showcase its power
 
 ## 🚀 How to View
 
+On GitHub Pages: [**CSSArts**](https://m80bee.github.io/CSSArts/index.html)
+Or clone it local and open index.html in your browser.
 
-
+---
 This project is a work in progress. New artworks will be added over time!

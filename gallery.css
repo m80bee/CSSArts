@@ -163,6 +163,37 @@ header p {
     to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+/* Preview for Water Lilies */
+#card-monet .card-preview {
+    background: linear-gradient(to bottom, #6b8e23, #4a6b2c);
+    overflow: hidden;
+}
+
+#card-monet .card-preview::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 55px;
+    top: 30%;
+    left: 25%;
+    background-color: #3a5a40;
+    border-radius: 50% 50% 30% 50% / 50% 50% 50% 30%;
+    transform: rotate(-20deg);
+}
+
+#card-monet .card-preview::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 75px;
+    top: 55%;
+    left: 60%;
+    background-color: #3a5a40;
+    border-radius: 50% 50% 50% 30% / 50% 50% 30% 50%;
+    transform: rotate(10deg);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
 .card-content {
     padding: 1.5rem;
     text-align: left;
