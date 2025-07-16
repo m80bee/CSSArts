@@ -1,0 +1,209 @@
+/* wave.css - Recreated and Enhanced */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff; /* AliceBlue, a soft, light blue */
+    overflow: hidden;
+}
+
+.scene {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #3d3d3d;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    background: linear-gradient(to bottom, #87ceeb 0%, #d1e4f0 70%); /* Skyblue to a lighter shade */
+}
+
+.fuji {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-60%);
+    width: 0;
+    height: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 180px solid #8a9ca8; /* Muted blue-grey for the mountain */
+    z-index: 1;
+    filter: drop-shadow(-10px 5px 5px rgba(0,0,0,0.1));
+}
+
+.fuji::after {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: -30px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 45px solid #f5f5f5; /* Off-white for snow cap */
+    filter: blur(1px);
+}
+
+.sea {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 450px;
+    background: #003366; /* Darker, richer blue for the sea */
+    z-index: 2;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: -100px;
+    width: 150%;
+    height: 600px;
+    background: radial-gradient(ellipse at top, #1e5799, #003366 70%);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    animation: wave-motion 12s infinite ease-in-out;
+}
+
+.wave-back {
+    left: -30%;
+    bottom: -120px;
+    opacity: 0.6;
+    animation-duration: 18s;
+}
+
+.wave-middle {
+    left: -15%;
+    bottom: -180px;
+    opacity: 0.8;
+    background: radial-gradient(ellipse at top, #3b7bb9, #1e5799 70%);
+    animation-duration: 15s;
+}
+
+.wave-front {
+    left: -5%;
+    bottom: -250px;
+    background: radial-gradient(ellipse at top, #5da9e9, #3b7bb9 80%);
+    animation-duration: 10s;
+}
+
+@keyframes wave-motion {
+    0% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(-8%) rotate(3deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+
+.wave-crest {
+    position: absolute;
+    top: -80px;
+    left: -5%;
+    width: 110%;
+    height: 200px;
+    background: transparent;
+    box-shadow: 0 -30px 50px -20px rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    animation: crest-flicker 2.5s infinite alternate ease-in-out;
+}
+
+.wave-crest::before, .wave-crest::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: -25px -25px 20px -20px #fff,
+                -55px -35px 30px -20px rgba(255,255,255,0.8),
+                -95px -15px 25px -20px rgba(255,255,255,0.7),
+                inset 10px 10px 20px -15px rgba(200, 220, 255, 0.5);
+    animation: foam-swirl 6s infinite ease-in-out;
+    transform-origin: center;
+}
+
+.wave-crest::before {
+    top: -30px;
+    left: 120px;
+}
+
+.wave-crest::after {
+    top: -10px;
+    left: 450px;
+    transform: scale(0.7);
+    animation-delay: -3s;
+}
+
+@keyframes crest-flicker {
+    from { opacity: 0.7; transform: translateY(0) rotate(-2deg); }
+    to { opacity: 1; transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes foam-swirl {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(15deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+.boat {
+    position: absolute;
+    width: 140px;
+    height: 35px;
+    background: #8b4513; /* SaddleBrown */
+    border: 2px solid #4a2a0c;
+    border-radius: 5px 5px 60% 60%;
+    z-index: 5;
+    animation: boat-rock 7s infinite ease-in-out;
+}
+
+.boat::before { /* Oarsmen placeholder */
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    width: 8px;
+    height: 12px;
+    background: #4a2a0c;
+    border-radius: 2px;
+    box-shadow: 18px 1px 0 #4a2a0c, 36px 0 0 #4a2a0c, 54px 1px 0 #4a2a0c, 72px 0 0 #4a2a0c;
+}
+
+.boat1 {
+    bottom: 120px;
+    left: 220px;
+    animation-delay: -1s;
+}
+
+.boat2 {
+    bottom: 90px;
+    left: 480px;
+    transform: scale(0.85);
+    animation-duration: 8s;
+}
+
+@keyframes boat-rock {
+    0% { transform: rotate(-3deg) translateY(0); }
+    50% { transform: rotate(4deg) translateY(-20px); }
+    100% { transform: rotate(-3deg) translateY(0); }
+}
+
+.back-link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    background: rgba(0, 51, 102, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    z-index: 10;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.back-link:hover {
+    background: #1e5799;
+}
