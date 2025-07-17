@@ -194,6 +194,67 @@ header p {
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+/* Preview for Northern Lights */
+#card-munch .card-preview {
+    background: #00001a;
+    overflow: hidden;
+}
+
+#card-munch .card-preview::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(0, 255, 150, 0.5) 30%, rgba(0, 200, 255, 0.5) 70%);
+    mix-blend-mode: screen;
+    animation: aurora-preview-anim 8s infinite ease-in-out alternate;
+}
+
+@keyframes aurora-preview-anim {
+    from { transform: skewX(20deg) translateX(-20%); }
+    to { transform: skewX(-20deg) translateX(20%); }
+}
+
+/* Preview for Surreal Rain */
+#card-dali .card-preview {
+    background: #a2c4e0;
+    overflow: hidden;
+    filter: blur(1px);
+}
+
+#card-dali .card-preview::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 50px;
+    top: 20%;
+    left: 30%;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 50% 50%;
+    transform: translateY(-100px);
+    animation: drip-preview-anim 4s infinite ease-in;
+    animation-delay: 0.5s;
+}
+
+#card-dali .card-preview::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 80px;
+    top: 40%;
+    left: 65%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50% 50% 0 0;
+    transform: scaleY(0.8) rotate(10deg);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes drip-preview-anim {
+    to { transform: translateY(300px); }
+}
+
 .card-content {
     padding: 1.5rem;
     text-align: left;
